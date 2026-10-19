@@ -8,6 +8,13 @@ namespace Dedicnost
         public static void Main(String[] args)
         {
             //testovací prostředí
+
+            Bojovnik [] legie = new Bojovnik [1000];
+
+            legie[0] = new Bojovnik(1, "Aragorn", "sekera");
+            legie[1] = new Bojovnik (1, "Conan", "meč");
+            legie[2] = new Kouzelnik(2, "Čáryfuk", 9);
+            
             Bojovnik barbar = new Bojovnik("Conan", "meč");
             Kouzelnik caryfuk = new Kouzelnik("Čáryfuk", 40);
 

@@ -6,7 +6,7 @@ namespace Dedicnost
     {
         private string zbran;
 
-        public Bojovnik(string jmeno, string zbran) : base(jmeno)
+        public Bojovnik(int id, string jmeno, string zbran) : base(jmeno, id)
         {
             this.zbran =zbran;
         }

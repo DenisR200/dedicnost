@@ -1,8 +1,17 @@
+using System.Dynamic;
+
 namespace Dedicnost
 {
     class Postava
     {
         private string jmeno;
+
+        private int id;
+
+        public int ID   
+        (
+            get{return id;}
+        )
         
         public string Jmeno
         {
@@ -13,6 +22,7 @@ namespace Dedicnost
         public Postava(string jmeno)
         {
             this.jmeno = jmeno;
+            this.id = id;
         }
 
         public virtual void Utoc()
