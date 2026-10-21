@@ -1,3 +1,4 @@
+using System.Collections;
 using Dedicnost;
 
 /// <summary>
@@ -51,7 +52,27 @@ public class Boss : Postava
     /// Fáze 2: Boss používá ohnivý útok.
     /// Fáze 3: Boss používá smrtící kouzlo.
     /// </remarks>
-    // SEM DOPLŇ METODU
+    public override void Utoc()
+    {
+        switch (Faze)
+        {
+
+            case 1:
+                Console.WriteLine("Boss útočí mečem");
+            break;
+
+            case 2:
+                Console.WriteLine("Boss používá ohnivý útok.");
+            break;
+            case 3:
+                Console.WriteLine("Boss používá smrtící kouzlo.");
+            break;
+
+            default:
+                base.Utoc();
+            break;
+        }
+    }
 
 
     /// <summary>
@@ -62,13 +83,32 @@ public class Boss : Postava
     /// 21–50 % životů: fáze 2.
     /// 20 % životů a méně: fáze 3.
     /// </remarks>
-    // SEM DOPLŇ METODU
+    public void ZmenaFaze()
+    {
+        float zivotyProcenta = AktualniZivoty/Zivoty * 100;
+        if (zivotyProcenta > 50)
+        {
+            Faze = 1;
+        }else
+        {
+            if (zivotyProcenta <= 50 && zivotyProcenta >= 21)
+            {
+                Faze = 2;
+            }else
+            {
+                Faze = 3;
+            }
+        }
+    }
 
 
     /// <summary>
     /// Vypíše zastrašující hlášku bosse.
     /// </summary>
-    // SEM DOPLŇ METODU
+    public string HlaskaBosse()
+    {
+        return $"Já se vrátím...";
+    }
 
 
     /// <summary>
