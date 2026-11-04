@@ -16,8 +16,14 @@ namespace Dedicnost
             legie[2] = new Kouzelnik(2, "Čáryfuk", 9);
 
             Boss terminator = new Boss ("T-800", 24, 1000);
-            Bojovnik barbar = new Bojovnik("Conan", "meč");
-            Kouzelnik caryfuk = new Kouzelnik("Čáryfuk", 40);
+            Bojovnik barbar = new Bojovnik(1, "Conan", "meč");
+            Kouzelnik caryfuk = new Kouzelnik(2, "Čáryfuk", 9, 40);
+            FinalBoss finalBoss = new FinalBoss("BOSS", 25, 10000, 120);
+
+            finalBoss.VypisInformace();
+            finalBoss.PrepniBojovyRezim();
+            finalBoss.Utoc();
+            finalBoss.VypisInformace();
 
             terminator.Utoc();
             terminator.Predstavse();

@@ -1,4 +1,3 @@
-using System.Collections;
 using Dedicnost;
 
 /// <summary>
@@ -7,21 +6,17 @@ using Dedicnost;
 /// Dokáže útočit, zastrašovat protivníka a měnit
 /// své chování podle aktuální fáze.
 /// </summary>
-public class Boss : Postava
+public class Boss: Postava
 {
 
-
-
     /// <summary>
-    /// Jméno bosse.
+    /// Počáteční životy Bosse.
     /// </summary>
-    public int Zivoty{get;set}
-   
-
+    public int Zivoty{get;set;}
     /// <summary>
     /// Aktuální počet životů bosse.
     /// </summary>
-    // SEM DOPLŇ VLASTNOST
+    public int AktualniZivoty{get; protected set;}
 
 
     /// <summary>
@@ -41,6 +36,7 @@ public class Boss : Postava
     public Boss(string jmeno, int id, int zivoty): base(jmeno, id)
     {
         Zivoty = zivoty;
+        AktualniZivoty = zivoty;
     }
 
 
@@ -56,14 +52,14 @@ public class Boss : Postava
     {
         switch (Faze)
         {
-
             case 1:
-                Console.WriteLine("Boss útočí mečem");
+                Console.WriteLine("Boss útočí mečem.");
             break;
-
+            
             case 2:
                 Console.WriteLine("Boss používá ohnivý útok.");
             break;
+
             case 3:
                 Console.WriteLine("Boss používá smrtící kouzlo.");
             break;
@@ -86,15 +82,18 @@ public class Boss : Postava
     public void ZmenaFaze()
     {
         float zivotyProcenta = AktualniZivoty/Zivoty * 100;
+
         if (zivotyProcenta > 50)
         {
             Faze = 1;
-        }else
+        }
+        else
         {
-            if (zivotyProcenta <= 50 && zivotyProcenta >= 21)
+            if(zivotyProcenta <= 50 && zivotyProcenta >= 21)
             {
                 Faze = 2;
-            }else
+            }
+            else
             {
                 Faze = 3;
             }
