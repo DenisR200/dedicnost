@@ -31,7 +31,7 @@ namespace Dedicnost
             else
             {
                 Console.WriteLine("Nedostaek many, použiji základní útok");
-                base.Utoc();
+                Console.WriteLine($"{Jmeno} provádí základní útok.");
             }
         }
 

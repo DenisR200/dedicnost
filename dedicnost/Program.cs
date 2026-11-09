@@ -9,6 +9,9 @@ namespace Dedicnost
         {
             //testovací prostředí
 
+            //Úkol 3
+            // Postava postava = new Postava("Test", 1);
+
             Postava [] legie = new Postava [1000];
 
             legie[0] = new Bojovnik(1, "Aragorn", "sekera");
@@ -45,6 +48,22 @@ namespace Dedicnost
             
             caryfuk.Meditace();
 
+        }
+        List<Postava> seznamPostav = new List<Postava>();
+
+        seznamPotsav.Add(barbar);
+        seznamPostav.Add(caryfuk);
+        seznamPostav.Add(terminator);
+        seznamPostav.Add(finalBoss);
+
+        Console.WriteLine();
+
+        foreach (Postava p in seznamPostav)
+        {
+            p.Predstavse();
+            p.Utoc();
+        Console.WriteLine();
+        
         }
     }
 }
